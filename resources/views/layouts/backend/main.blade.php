@@ -21,7 +21,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('frontend/assets/images/logo-white.svg') }}" />
+    <link rel="icon" type="image/x-icon" href="https://fip.unp.ac.id/img/Logo-header.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
