@@ -28,8 +28,8 @@
             <td>{{ $childPage->name }}</td>
             <td>{{ $childPage->user->name }}</td>
             <td>
-              <a href="{{ route('parent-pages.child-pages.edit', [$parentPage, $childPage]) }}" class="btn btn-warning btn-sm">Edit</a>
-              <form action="{{ route('parent-pages.child-pages.destroy', [$parentPage, $childPage]) }}" method="POST" style="display:inline-block;">
+              <a href="{{ route('parent-pages.child-pages.edit', $childPage->id) }}" class="btn btn-warning btn-sm">Edit</a>
+              <form action="{{ route('parent-pages.child-pages.destroy', $childPage->id) }}" method="POST" style="display:inline-block;">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin?')">Hapus</button>
