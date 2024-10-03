@@ -39,7 +39,7 @@ class PageController extends Controller
             $count++;
         }
         Page::create($data);
-        return redirect()->route('pages.index')->with('success', 'Halaman berhasil dibuat.');
+        return redirect()->route('page.index')->with('success', 'Halaman berhasil dibuat.');
     }
 
     public function edit(Page $page)
@@ -69,6 +69,12 @@ class PageController extends Controller
 
         $page->update($validatedData);
 
-        return redirect()->route('pages.index')->with('success', 'Halaman berhasil diperbarui.');
+        return redirect()->route('page.index')->with('success', 'Halaman berhasil diperbarui.');
+    }
+
+    public function destroy(Page $page)
+    {
+        $page->delete();
+        return redirect()->route('page.index')->with('success', 'Halaman berhasil dihapus.');
     }
 }

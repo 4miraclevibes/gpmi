@@ -32,7 +32,7 @@ class NestingPageController extends Controller
 
         NestingPage::create($data);
 
-        return redirect()->route('nesting-pages.index')->with('success', 'Halaman Nesting berhasil dibuat.');
+        return redirect()->route('nesting-page.index')->with('success', 'Halaman Nesting berhasil dibuat.');
     }
 
     public function edit(NestingPage $nestingPage)
@@ -53,12 +53,12 @@ class NestingPageController extends Controller
 
         $nestingPage->update($data);
 
-        return redirect()->route('nesting-pages.index')->with('success', 'Halaman Nesting berhasil diperbarui.');
+        return redirect()->route('nesting-page.index')->with('success', 'Halaman Nesting berhasil diperbarui.');
     }
 
     public function destroy(NestingPage $nestingPage)
     {
         $nestingPage->delete();
-        return redirect()->route('nesting-pages.index')->with('success', 'Halaman Nesting berhasil dihapus.');
+        return redirect()->route('nesting-page.index')->with('success', 'Halaman Nesting berhasil dihapus.');
     }
 }
