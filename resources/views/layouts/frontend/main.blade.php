@@ -52,10 +52,37 @@
     @include('layouts.frontend.navbar')
     @yield('content')
     @include('layouts.frontend.footer')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var navbarToggler = document.querySelector('.navbar-toggler');
+        var navbarCollapse = document.querySelector('.navbar-collapse');
+        var bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+        
+        // Menutup navbar saat item menu diklik
+        var navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item');
+        navLinks.forEach(function(navLink) {
+            navLink.addEventListener('click', function() {
+                if (window.innerWidth < 992) { // Hanya jalankan pada tampilan mobile
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Menutup navbar saat mengklik di luar navbar
+        document.addEventListener('click', function(event) {
+            var isClickInside = navbarCollapse.contains(event.target) || navbarToggler.contains(event.target);
+            if (!isClickInside && navbarCollapse.classList.contains('show') && window.innerWidth < 992) {
+                bsCollapse.hide();
+            }
+        });
+
+        // Toggle navbar saat tombol toggler diklik
+        navbarToggler.addEventListener('click', function() {
+            bsCollapse.toggle();
+        });
+    });
+    </script>
     @yield('scripts')
   </body>
 </html>
