@@ -110,12 +110,12 @@
     }
 
     .duties-section {
-        background-image: url('https://filemanager.layananberhentikuliah.com/storage/files/jfiDY3Y8z5YYi9Ma1oeSwWeVn2NLApqPLObKK61y.jpg');
+        position: relative;
+        background-image: url('path/to/your/background-image.jpg');
         background-size: cover;
         background-position: center;
-        padding: 4rem 0;
-        position: relative;
         color: white;
+        padding: 4rem 0;
     }
 
     .duties-overlay {
@@ -124,23 +124,35 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.7);
     }
 
     .duties-container {
         position: relative;
         z-index: 1;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
 
     .duties-content {
-        flex: 1;
-        max-width: 50%;
+        flex: 1 1 60%;
+        padding-right: 2rem;
+    }
+
+    .duties-image {
+        flex: 1 1 35%;
+        max-width: 35%;
+    }
+
+    .duties-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
     }
 
     .duties-title {
@@ -149,20 +161,33 @@
     }
 
     .duties-description {
-        font-size: 1rem;
+        font-size: 1.1rem;
         line-height: 1.6;
         margin-bottom: 1rem;
     }
 
-    .duties-image {
-        flex: 1;
-        max-width: 40%;
-    }
+    @media (max-width: 768px) {
+        .duties-container {
+            flex-direction: column;
+        }
 
-    .duties-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
+        .duties-content, .duties-image {
+            flex: 1 1 100%;
+            max-width: 100%;
+            padding-right: 0;
+        }
+
+        .duties-image {
+            margin-top: 2rem;
+        }
+
+        .duties-title {
+            font-size: 2rem;
+        }
+
+        .duties-description {
+            font-size: 1rem;
+        }
     }
 
     .management-section {

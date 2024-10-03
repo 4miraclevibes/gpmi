@@ -34,6 +34,17 @@
         border: 1px solid #000;
         width: 100px;
       }
+      body {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    html {
+        overflow-x: hidden;
+    }
     </style>
     @yield('styles')
   </head>
