@@ -6,7 +6,7 @@
   <div class="card">
     <div class="card-header">
       <h5>Konten Halaman untuk {{ $nestingPage->name }}</h5>
-      <a href="{{ route('nesting-pages.page-contents.create', $nestingPage) }}" class="btn btn-primary btn-sm">Buat Konten Halaman</a>
+      <a href="{{ route('nesting-page.page-contents.create', $nestingPage) }}" class="btn btn-primary btn-sm">Buat Konten Halaman</a>
     </div>
   </div>
   <div class="card mt-2">
@@ -30,8 +30,8 @@
             <td>{{ $pageContent->status }}</td>
             <td>{{ $pageContent->user->name }}</td>
             <td>
-              <a href="{{ route('nesting-pages.page-contents.edit', $pageContent->id) }}" class="btn btn-warning btn-sm">Edit</a>
-              <form action="{{ route('nesting-pages.page-contents.destroy', $pageContent->id) }}" method="POST" style="display:inline-block;">
+              <a href="{{ route('nesting-page.page-contents.edit', $pageContent->id) }}" class="btn btn-warning btn-sm">Edit</a>
+              <form action="{{ route('nesting-page.page-contents.destroy', $pageContent->id) }}" method="POST" style="display:inline-block;">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin?')">Hapus</button>

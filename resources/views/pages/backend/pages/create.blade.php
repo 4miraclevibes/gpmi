@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Buat Halaman Baru </h1>
-    <form action="{{ route('pages.store') }}" method="POST">
+    <form action="{{ route('page.store') }}" method="POST">
         @csrf
         <div class="row mb-3">
             <div class="col-md-12">
@@ -24,7 +24,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Buat Halaman</button>
-        <a href="{{ route('pages.index') }}" class="btn btn-secondary">Batal</a>
+        <a href="{{ route('page.index') }}" class="btn btn-secondary">Batal</a>
     </form>
 </div>
 @endsection

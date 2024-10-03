@@ -5,7 +5,7 @@
   <div class="card">
     <h5 class="card-header">Buat Halaman Nesting Baru</h5>
     <div class="card-body">
-      <form action="{{ route('nesting-pages.store') }}" method="POST">
+      <form action="{{ route('nesting-page.store') }}" method="POST">
         @csrf
         <div class="mb-3">
           <label for="name" class="form-label">Nama Halaman Nesting</label>
@@ -27,7 +27,7 @@
           </select>
         </div>
         <button type="submit" class="btn btn-primary">Simpan</button>
-        <a href="{{ route('nesting-pages.index') }}" class="btn btn-secondary">Batal</a>
+        <a href="{{ route('nesting-page.index') }}" class="btn btn-secondary">Batal</a>
       </form>
     </div>
   </div>

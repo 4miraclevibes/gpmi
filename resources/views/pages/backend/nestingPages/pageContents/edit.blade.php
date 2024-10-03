@@ -5,7 +5,7 @@
     <div class="card">
         <h5 class="card-header">Edit Konten Halaman {{ $pageContent->name }}</h5>
         <div class="card-body">
-            <form action="{{ route('nesting-pages.page-contents.update', $pageContent->id) }}" method="POST">
+            <form action="{{ route('nesting-page.page-contents.update', $pageContent->id) }}" method="POST">
                 @csrf
                 @method('PATCH')
                 <div class="mb-3">
@@ -28,7 +28,7 @@
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Perbarui</button>
-                <a href="{{ route('nesting-pages.page-contents.index', $pageContent->nestingPage) }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('nesting-page.page-contents.index', $pageContent->nestingPage) }}" class="btn btn-secondary">Batal</a>
             </form>
         </div>
     </div>

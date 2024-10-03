@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Edit Halaman</h1>
-    <form action="{{ route('pages.update', $page->id) }}" method="POST">
+    <form action="{{ route('page.update', $page->id) }}" method="POST">
         @csrf
         @method('PATCH')
         <div class="row mb-3">
@@ -25,7 +25,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Perbarui</button>
-        <a href="{{ route('pages.index') }}" class="btn btn-secondary">Batal</a>
+        <a href="{{ route('page.index') }}" class="btn btn-secondary">Batal</a>
     </form>
 </div>
 @endsection

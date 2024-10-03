@@ -11,14 +11,14 @@ use App\Http\Controllers\NestingPageController;
 use App\Http\Controllers\PageContentController;
 use App\Http\Controllers\LandingController;
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/', [LandingController::class, 'index'])->name('landing');
 Route::get('/pages/{id}', [LandingController::class, 'pageShow'])->name('pages.show');
 Route::get('/nesting-pages/{id}', [LandingController::class, 'nestingPageShow'])->name('nesting-pages.show');
 Route::get('/nesting-pages/{nestingPage}/page-contents/{id}', [LandingController::class, 'nestingPageContentShow'])->name('nesting-pages.page-contents.show');
 Route::get('/child-pages/{id}', [LandingController::class, 'childPageShow'])->name('child-pages.show');
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,12 +36,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/documents/store', [DocumentController::class, 'store'])->name('documents.store');
     Route::delete('/documents/{document}/destroy', [DocumentController::class, 'destroy'])->name('documents.destroy');
     //page
-    Route::get('/pages', [PageController::class, 'index'])->name('pages.index');
-    Route::get('/pages/create', [PageController::class, 'create'])->name('pages.create');
-    Route::post('/pages/store', [PageController::class, 'store'])->name('pages.store');
-    Route::get('/pages/{page}/edit', [PageController::class, 'edit'])->name('pages.edit');
-    Route::put('/pages/{page}/update', [PageController::class, 'update'])->name('pages.update');
-    Route::delete('/pages/{page}/destroy', [PageController::class, 'destroy'])->name('pages.destroy');
+    Route::get('/page', [PageController::class, 'index'])->name('page.index');
+    Route::get('/page/create', [PageController::class, 'create'])->name('page.create');
+    Route::post('/page/store', [PageController::class, 'store'])->name('page.store');
+    Route::get('/page/{page}/edit', [PageController::class, 'edit'])->name('page.edit');
+    Route::put('/page/{page}/update', [PageController::class, 'update'])->name('page.update');
+    Route::delete('/page/{page}/destroy', [PageController::class, 'destroy'])->name('page.destroy');
     //parent page
     Route::get('/parent-pages', [ParentPageController::class, 'index'])->name('parent-pages.index');
     Route::post('/parent-pages/store', [ParentPageController::class, 'store'])->name('parent-pages.store');
@@ -55,19 +55,19 @@ Route::middleware('auth')->group(function () {
     Route::patch('/parent-pages/child-pages/{childPage}/update', [ChildPageController::class, 'update'])->name('parent-pages.child-pages.update');
     Route::delete('/parent-pages/child-pages/{childPage}/destroy', [ChildPageController::class, 'destroy'])->name('parent-pages.child-pages.destroy');
     //nesting page
-    Route::get('/nesting-pages', [NestingPageController::class, 'index'])->name('nesting-pages.index');
-    Route::post('/nesting-pages/store', [NestingPageController::class, 'store'])->name('nesting-pages.store');
-    Route::patch('/nesting-pages/{nestingPage}/update', [NestingPageController::class, 'update'])->name('nesting-pages.update');
-    Route::delete('/nesting-pages/{nestingPage}/destroy', [NestingPageController::class, 'destroy'])->name('nesting-pages.destroy');
-    Route::get('/nesting-pages/create', [NestingPageController::class, 'create'])->name('nesting-pages.create');
-    Route::get('/nesting-pages/{nestingPage}/edit', [NestingPageController::class, 'edit'])->name('nesting-pages.edit');
+    Route::get('/nesting-page', [NestingPageController::class, 'index'])->name('nesting-page.index');
+    Route::post('/nesting-page/store', [NestingPageController::class, 'store'])->name('nesting-page.store');
+    Route::patch('/nesting-page/{nestingPage}/update', [NestingPageController::class, 'update'])->name('nesting-page.update');
+    Route::delete('/nesting-page/{nestingPage}/destroy', [NestingPageController::class, 'destroy'])->name('nesting-page.destroy');
+    Route::get('/nesting-page/create', [NestingPageController::class, 'create'])->name('nesting-page.create');
+    Route::get('/nesting-page/{nestingPage}/edit', [NestingPageController::class, 'edit'])->name('nesting-page.edit');
     //page content
-    Route::get('/nesting-pages/{nestingPage}/page-contents', [PageContentController::class, 'index'])->name('nesting-pages.page-contents.index');
-    Route::get('/nesting-pages/{nestingPage}/page-contents/create', [PageContentController::class, 'create'])->name('nesting-pages.page-contents.create');
-    Route::post('/nesting-pages/{nestingPage}/page-contents/store', [PageContentController::class, 'store'])->name('nesting-pages.page-contents.store');
-    Route::get('/nesting-pages/page-contents/{pageContent}/edit', [PageContentController::class, 'edit'])->name('nesting-pages.page-contents.edit');
-    Route::patch('/nesting-pages/page-contents/{pageContent}/update', [PageContentController::class, 'update'])->name('nesting-pages.page-contents.update');
-    Route::delete('/nesting-pages/page-contents/{pageContent}/destroy', [PageContentController::class, 'destroy'])->name('nesting-pages.page-contents.destroy');
+    Route::get('/nesting-page/{nestingPage}/page-contents', [PageContentController::class, 'index'])->name('nesting-page.page-contents.index');
+    Route::get('/nesting-page/{nestingPage}/page-contents/create', [PageContentController::class, 'create'])->name('nesting-page.page-contents.create');
+    Route::post('/nesting-page/{nestingPage}/page-contents/store', [PageContentController::class, 'store'])->name('nesting-page.page-contents.store');
+    Route::get('/nesting-page/page-contents/{pageContent}/edit', [PageContentController::class, 'edit'])->name('nesting-page.page-contents.edit');
+    Route::patch('/nesting-page/page-contents/{pageContent}/update', [PageContentController::class, 'update'])->name('nesting-page.page-contents.update');
+    Route::delete('/nesting-page/page-contents/{pageContent}/destroy', [PageContentController::class, 'destroy'])->name('nesting-page.page-contents.destroy');
 });
 
 require __DIR__.'/auth.php';

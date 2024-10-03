@@ -39,8 +39,8 @@
                 </a>
               </li>
               <!-- Pages -->
-              <li class="menu-item {{ Route::is('pages*') ? 'active' : '' }}">
-                <a href="{{ route('pages.index') }}" class="menu-link text-white">
+              <li class="menu-item {{ Route::is('page*') ? 'active' : '' }}">
+                <a href="{{ route('page.index') }}" class="menu-link text-white">
                   <i class="menu-icon tf-icons bx bxs-file"></i>
                   <div data-i18n="Pages">Pages</div>
                 </a>
@@ -53,8 +53,8 @@
                 </a>
               </li>
               <!-- Nesting Pages -->
-              <li class="menu-item {{ Route::is('nesting-pages*') ? 'active' : '' }}">
-                <a href="{{ route('nesting-pages.index') }}" class="menu-link text-white">
+              <li class="menu-item {{ Route::is('nesting-page*') ? 'active' : '' }}">
+                <a href="{{ route('nesting-page.index') }}" class="menu-link text-white">
                   <i class="menu-icon tf-icons bx bxs-file"></i>
                   <div data-i18n="Nesting Pages">Nesting Pages</div>
                 </a>

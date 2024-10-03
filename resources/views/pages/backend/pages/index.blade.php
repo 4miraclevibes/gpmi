@@ -5,7 +5,7 @@
 <div class="container-xxl flex-grow-1 container-p-y">
   <div class="card">
     <div class="card-header">
-      <a href="{{ route('pages.create') }}" class="btn btn-primary btn-sm">Buat Halaman</a>
+      <a href="{{ route('page.create') }}" class="btn btn-primary btn-sm">Buat Halaman</a>
     </div>
   </div>
   <div class="card mt-2">
@@ -27,8 +27,8 @@
             <td>{{ $page->name }}</td>
             <td>{{ $page->user->name }}</td>
             <td>
-              <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-warning btn-sm">Edit</a>
-              <form action="{{ route('pages.destroy', $page->id) }}" method="POST" style="display:inline-block;">
+              <a href="{{ route('page.edit', $page->id) }}" class="btn btn-warning btn-sm">Edit</a>
+              <form action="{{ route('page.destroy', $page->id) }}" method="POST" style="display:inline-block;">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin?')">Hapus</button>

@@ -5,7 +5,7 @@
 <div class="container-xxl flex-grow-1 container-p-y">
   <div class="card">
     <div class="card-header">
-      <a href="{{ route('nesting-pages.create') }}" class="btn btn-primary btn-sm">
+      <a href="{{ route('nesting-page.create') }}" class="btn btn-primary btn-sm">
         Buat Halaman Nesting
       </a>
     </div>
@@ -31,9 +31,9 @@
             <td>{{ $nestingPage->status }}</td>
             <td>{{ $nestingPage->user->name }}</td>
             <td>
-              <a href="{{ route('nesting-pages.edit', $nestingPage->id) }}" class="btn btn-warning btn-sm">Edit</a>
-              <a href="{{ route('nesting-pages.page-contents.index', $nestingPage) }}" class="btn btn-info btn-sm">Konten</a>
-              <form action="{{ route('nesting-pages.destroy', $nestingPage->id) }}" method="POST" style="display:inline-block;">
+              <a href="{{ route('nesting-page.edit', $nestingPage->id) }}" class="btn btn-warning btn-sm">Edit</a>
+              <a href="{{ route('nesting-page.page-contents.index', $nestingPage) }}" class="btn btn-info btn-sm">Konten</a>
+              <form action="{{ route('nesting-page.destroy', $nestingPage->id) }}" method="POST" style="display:inline-block;">
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin?')">Hapus</button>
