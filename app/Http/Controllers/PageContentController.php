@@ -35,7 +35,7 @@ class PageContentController extends Controller
 
         PageContent::create($data);
 
-        return redirect()->route('nesting-pages.page-contents.index', $nestingPage)->with('success', 'Konten Halaman berhasil dibuat.');
+        return redirect()->route('nesting-page.page-contents.index', $nestingPage)->with('success', 'Konten Halaman berhasil dibuat.');
     }
 
     public function edit(PageContent $pageContent)
@@ -57,12 +57,12 @@ class PageContentController extends Controller
 
         $pageContent->update($data);
 
-        return redirect()->route('nesting-pages.page-contents.index', $pageContent->nestingPage)->with('success', 'Konten Halaman berhasil diperbarui.');
+        return redirect()->route('nesting-page.page-contents.index', $pageContent->nestingPage)->with('success', 'Konten Halaman berhasil diperbarui.');
     }
 
     public function destroy(PageContent $pageContent)
     {
         $pageContent->delete();
-        return redirect()->route('nesting-pages.page-contents.index', $pageContent->nestingPage)->with('success', 'Konten Halaman berhasil dihapus.');
+        return redirect()->route('nesting-page.page-contents.index', $pageContent->nestingPage)->with('success', 'Konten Halaman berhasil dihapus.');
     }
 }
