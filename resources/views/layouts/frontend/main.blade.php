@@ -59,12 +59,22 @@
         var navbarCollapse = document.querySelector('.navbar-collapse');
         var bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
         
-        // Menutup navbar saat item menu diklik
-        var navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item');
+        // Menutup navbar saat item menu non-dropdown diklik
+        var navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle), .navbar-nav .dropdown-item');
         navLinks.forEach(function(navLink) {
             navLink.addEventListener('click', function() {
                 if (window.innerWidth < 992) { // Hanya jalankan pada tampilan mobile
                     bsCollapse.hide();
+                }
+            });
+        });
+
+        // Mencegah penutupan navbar saat dropdown toggle diklik
+        var dropdownToggles = document.querySelectorAll('.navbar-nav .dropdown-toggle');
+        dropdownToggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function(event) {
+                if (window.innerWidth < 992) {
+                    event.stopPropagation(); // Mencegah event bubbling
                 }
             });
         });
