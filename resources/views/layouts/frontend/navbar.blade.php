@@ -11,6 +11,9 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Route::is('landing') ? 'active' : '' }}" aria-current="page" href="{{ route('landing') }}">Beranda</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::is('akredetasi') ? 'active' : '' }}" aria-current="page" href="{{ route('akredetasi') }}">Akreditasi</a>
+                </li>
                 @foreach ($pages as $page)
                 <li class="nav-item">
                     <a class="nav-link {{ $page->name }}" href="{{ route('pages.show', $page->id) }}">{{ $page->name }}</a>
