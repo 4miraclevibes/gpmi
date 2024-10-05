@@ -64,4 +64,14 @@ class LandingController extends Controller
         $childPage = ChildPage::find($id);
         return view('pages.frontend.childPages.show', compact('childPage', 'pages', 'nestingPages', 'parentPages'));
     }
+
+    public function akredetasi()
+    {
+        //Variable Global
+        $pages = Page::all();
+        $nestingPages = NestingPage::all();
+        $parentPages = ParentPage::all();
+        //Variable Local
+        return view('pages.frontend.akredetasi', compact('pages', 'nestingPages', 'parentPages'));
+    }
 }

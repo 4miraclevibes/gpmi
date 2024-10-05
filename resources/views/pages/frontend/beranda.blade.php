@@ -264,7 +264,7 @@
     <div class="hero-content">
         <h1 class="hero-title">BPMI</h1>
         <p class="hero-subtitle">Badan Penjaminan Mutu Internal</p>
-        <a href="#" class="hero-button">TENTANG KAMI</a>
+        <a href="#" class="d-none hero-button">TENTANG KAMI</a>
     </div>
 </div>
 

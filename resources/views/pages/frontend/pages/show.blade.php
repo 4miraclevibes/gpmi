@@ -7,7 +7,7 @@
         color: #fff;
     }
     .page-hero {
-        background-image: url({{ $page->background_image }});
+        background-image: url({{ $page->background_image ?? 'https://filemanager.layananberhentikuliah.com/storage/files/W3NJ8rGt1hdIv21wQwL7K896QJvnxXmyN8WzzxQd.jpg' }});
         background-size: cover;
         background-position: center;
         height: 300px;

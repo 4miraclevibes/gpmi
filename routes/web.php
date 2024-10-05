@@ -19,7 +19,7 @@ Route::get('/pages/{id}', [LandingController::class, 'pageShow'])->name('pages.s
 Route::get('/nesting-pages/{id}', [LandingController::class, 'nestingPageShow'])->name('nesting-pages.show');
 Route::get('/nesting-pages/{nestingPage}/page-contents/{id}', [LandingController::class, 'nestingPageContentShow'])->name('nesting-pages.page-contents.show');
 Route::get('/child-pages/{id}', [LandingController::class, 'childPageShow'])->name('child-pages.show');
-
+Route::get('/akredetasi', [LandingController::class, 'akredetasi'])->name('akredetasi');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
