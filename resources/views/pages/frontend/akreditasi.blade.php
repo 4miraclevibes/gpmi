@@ -119,7 +119,7 @@
                                                                 <td>{{ $document->category }}</td>
                                                                 <td>{{ $document->period }}</td>
                                                                 <td>
-                                                                    <a href="{{ $document->sertificate }}" class="btn btn-primary btn-sm download-btn" data-document-id="{{ $document->id }}" target="_blank">
+                                                                    <a href="{{ Storage::url($document->sertificate) }}" class="btn btn-primary btn-sm download-btn" data-document-id="{{ $document->id }}" target="_blank">
                                                                         <i class="bi bi-download"></i> Download
                                                                     </a>
                                                                 </td>
