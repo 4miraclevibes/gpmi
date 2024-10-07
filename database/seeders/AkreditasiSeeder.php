@@ -14,9 +14,9 @@ class AkreditasiSeeder extends Seeder
      */
     public function run(): void
     {
-        Artisan::call('migrate:refresh --path=database/migrations/2024_10_07_044239_create_akreditasi_departments_table.php');
-        Artisan::call('migrate:refresh --path=database/migrations/2024_10_07_044537_create_akreditasi_study_programs_table.php');
-        Artisan::call('migrate:refresh --path=database/migrations/2024_10_07_044555_create_study_program_documents_table.php');
+        // Artisan::call('migrate:refresh --path=database/migrations/2024_10_07_044239_create_akreditasi_departments_table.php');
+        // Artisan::call('migrate:refresh --path=database/migrations/2024_10_07_044537_create_akreditasi_study_programs_table.php');
+        // Artisan::call('migrate:refresh --path=database/migrations/2024_10_07_044555_create_study_program_documents_table.php');
         $departments = [
             [
                 'name' => 'Deparment 1',
