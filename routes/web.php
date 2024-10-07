@@ -10,6 +10,7 @@ use App\Http\Controllers\ChildPageController;
 use App\Http\Controllers\NestingPageController;
 use App\Http\Controllers\PageContentController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\AkreditasiController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -19,7 +20,7 @@ Route::get('/pages/{id}', [LandingController::class, 'pageShow'])->name('pages.s
 Route::get('/nesting-pages/{id}', [LandingController::class, 'nestingPageShow'])->name('nesting-pages.show');
 Route::get('/nesting-pages/{nestingPage}/page-contents/{id}', [LandingController::class, 'nestingPageContentShow'])->name('nesting-pages.page-contents.show');
 Route::get('/child-pages/{id}', [LandingController::class, 'childPageShow'])->name('child-pages.show');
-Route::get('/akredetasi', [LandingController::class, 'akredetasi'])->name('akredetasi');
+Route::get('/akreditasi', [LandingController::class, 'akreditasi'])->name('akreditasi');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -68,6 +69,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/nesting-page/page-contents/{pageContent}/edit', [PageContentController::class, 'edit'])->name('nesting-page.page-contents.edit');
     Route::patch('/nesting-page/page-contents/{pageContent}/update', [PageContentController::class, 'update'])->name('nesting-page.page-contents.update');
     Route::delete('/nesting-page/page-contents/{pageContent}/destroy', [PageContentController::class, 'destroy'])->name('nesting-page.page-contents.destroy');
+    //akreditasi
+    Route::get('/akreditasi-departments', [AkreditasiController::class, 'index'])->name('akreditasi-departments.index');
+    Route::post('/akreditasi-departments', [AkreditasiController::class, 'store'])->name('akreditasi-departments.store');
+    Route::patch('/akreditasi-departments/{department}', [AkreditasiController::class, 'update'])->name('akreditasi-departments.update');
+    Route::delete('/akreditasi-departments/{department}', [AkreditasiController::class, 'destroy'])->name('akreditasi-departments.destroy');
+    Route::get('/akreditasi-departments/{akreditasiStudyProgram}/documents', [AkreditasiController::class, 'showDocuments'])->name('akreditasi-departments.study-programs.documents.index');
+    Route::post('/akreditasi-departments/{akreditasiStudyProgram}/documents', [AkreditasiController::class, 'storeDocument'])->name('akreditasi-departments.study-programs.documents.store');
+    Route::put('/akreditasi-departments/documents/{document}', [AkreditasiController::class, 'updateDocument'])->name('akreditasi-departments.documents.update');
+    Route::delete('/akreditasi-departments/documents/{document}', [AkreditasiController::class, 'destroyDocument'])->name('akreditasi-departments.documents.destroy');
+    Route::delete('/akreditasi-departments/study-programs/{studyProgram}', [AkreditasiController::class, 'destroyStudyProgram'])->name('akreditasi-departments.study-programs.destroy');
+    Route::put('/akreditasi-departments/study-programs/{studyProgram}', [AkreditasiController::class, 'updateStudyProgram'])->name('akreditasi-departments.study-programs.update');
 });
 
 require __DIR__.'/auth.php';

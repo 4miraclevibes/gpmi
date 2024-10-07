@@ -7,7 +7,7 @@
         color: #fff;
     }
     .page-hero {
-        background-image: url({{ $nestingPage->background_image ?? 'https://filemanager.layananberhentikuliah.com/storage/files/W3NJ8rGt1hdIv21wQwL7K896QJvnxXmyN8WzzxQd.jpg' }});
+        background-image: url({{ $nestingPage->background_image ?? 'https://filemanager.layananberhentikuliah.com/storage/documents/GvFxOqlo3UXSokZVimCdtQtSeqbvuzlJbNacGru6.jpg' }});
         background-size: cover;
         background-position: center;
         height: 300px;
@@ -135,7 +135,7 @@
                                 @foreach ($nestingPage->pageContents as $pageContent)
                                 <div class="news-item">
                                     <a href="{{ route('nesting-pages.page-contents.show', [$nestingPage->id, $pageContent->id]) }}">
-                                        <img src="{{ $pageContent->background_image ?? 'https://via.placeholder.com/300x200' }}" alt="{{ $pageContent->name }}" class="news-image">
+                                        <img src="{{ $pageContent->background_image ?? 'https://filemanager.layananberhentikuliah.com/storage/files/W3NJ8rGt1hdIv21wQwL7K896QJvnxXmyN8WzzxQd.jpg' }}" alt="{{ $pageContent->name }}" class="news-image">
                                     </a>
                                     <div class="news-content">
                                         <h3 class="news-item-title">{{ $pageContent->name }}</h3>

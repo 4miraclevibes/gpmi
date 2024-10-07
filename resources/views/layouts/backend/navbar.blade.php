@@ -59,6 +59,13 @@
                   <div data-i18n="Nesting Pages">Nesting Pages</div>
                 </a>
               </li>
+              <!-- Akreditasi -->
+              <li class="menu-item {{ Route::is('akreditasi-departments*') ? 'active' : '' }}">
+                <a href="{{ route('akreditasi-departments.index') }}" class="menu-link text-white">
+                  <i class="menu-icon tf-icons bx bxs-file"></i>
+                  <div data-i18n="Akreditasi">Akreditasi</div>
+                </a>
+              </li>
             </ul>
           </aside>
           <!-- / Menu -->

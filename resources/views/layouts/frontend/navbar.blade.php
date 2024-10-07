@@ -12,7 +12,7 @@
                     <a class="nav-link {{ Route::is('landing') ? 'active' : '' }}" aria-current="page" href="{{ route('landing') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Route::is('akredetasi') ? 'active' : '' }}" aria-current="page" href="{{ route('akredetasi') }}">Akreditasi</a>
+                    <a class="nav-link {{ Route::is('akreditasi') ? 'active' : '' }}" aria-current="page" href="{{ route('akreditasi') }}">Akreditasi</a>
                 </li>
                 @foreach ($pages as $page)
                 <li class="nav-item">

@@ -8,6 +8,8 @@ use App\Models\NestingPage;
 use App\Models\PageContent;
 use App\Models\ParentPage;
 use App\Models\ChildPage;
+use App\Models\AkreditasiDepartment;
+
 class LandingController extends Controller
 {
     public function index()
@@ -65,13 +67,16 @@ class LandingController extends Controller
         return view('pages.frontend.childPages.show', compact('childPage', 'pages', 'nestingPages', 'parentPages'));
     }
 
-    public function akredetasi()
+    public function akreditasi()
     {
         //Variable Global
         $pages = Page::all();
         $nestingPages = NestingPage::all();
         $parentPages = ParentPage::all();
+        
         //Variable Local
-        return view('pages.frontend.akredetasi', compact('pages', 'nestingPages', 'parentPages'));
+        $departments = AkreditasiDepartment::with(['akreditasiStudyPrograms.studyProgramDocuments'])->get();
+        
+        return view('pages.frontend.akreditasi', compact('pages', 'nestingPages', 'parentPages', 'departments'));
     }
 }
