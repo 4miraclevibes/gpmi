@@ -71,12 +71,11 @@
                 <div class="card-body">
                     <div class="description-container bg-white text-dark" style="max-height: 1920px; overflow-y: auto;">
                         <p class="mt-3 description text-dark bg-white">
-                            Universitas Ahmad Dahlan (UAD) telah mendapatkan Akreditasi A untuk penilaian
-                            akreditasi institusi yang dilakukan oleh Badan Akreditasi Nasional Perguruan Tinggi (BAN-PT) sejak 2022.
-                            <br><br>
-                            Pada tahun akademik 2022/2023 ini, UAD menawarkan program pendidikan di jenjang sarjana (S1) yang 
-                            terdiri dari beberapa pilihan program studi. Dari seluruh pilihan program pendidikan sarjana UAD, 70% telah 
-                            terakreditasi A, sedangkan 30% telah terakreditasi B.
+                            INFORMASI TERKAIT SERTIFIKAT AKREDITASI
+                            PROGRAM STUDI DI FAKULTAS ILMU PENDIDIKAN UNIVERSITAS NEGERI PADANG
+                            <br> <br>
+                            Sertifikat Akreditasi Program Studi Yang terdapat Di Fakultas Ilmu Pendidikan Universitas Negeri Padang,
+                            Sertifikat Akreditasi Program Studi FIP UNP dapat di download dibawah ini:
                         </p>
                     </div>
                     <div class="container">

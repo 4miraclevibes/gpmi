@@ -26,12 +26,12 @@
                         @foreach($akreditasiStudyProgram->studyProgramDocuments as $document)
                         <tr>
                             <td>{{ $document->category }}</td>
-                            <td>{{ $document->sertificate }}</td>
+                            <td><a href="{{ Storage::url($document->sertificate) }}" target="_blank">Download</a></td>
                             <td>{{ $document->period }}</td>
                             <td>{{ $document->status }}</td>
                             <td>
                                 <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#editDocumentModal{{ $document->id }}">Edit</button>
-                                <form action="{{ route('akreditasi-departments.documents.destroy', $document->id) }}" method="POST" style="display:inline;">
+                                <form action="{{ route('akreditasi-departments.study-programs.documents.destroy', $document->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus dokumen ini?')">Hapus</button>
@@ -54,7 +54,7 @@
                 <h5 class="modal-title">Tambah Dokumen</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('akreditasi-departments.study-programs.documents.store', $akreditasiStudyProgram->id) }}" method="POST">
+            <form action="{{ route('akreditasi-departments.study-programs.documents.store', $akreditasiStudyProgram->id) }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
@@ -71,7 +71,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="sertificate" class="form-label">Sertifikat</label>
-                        <input type="text" class="form-control" id="sertificate" name="sertificate" required>
+                        <input type="file" class="form-control" id="sertificate" name="sertificate" required>
                     </div>
                     <div class="mb-3">
                         <label for="period" class="form-label">Periode</label>
@@ -96,7 +96,7 @@
                 <h5 class="modal-title">Edit Dokumen</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('akreditasi-departments.documents.update', $document->id) }}" method="POST">
+            <form action="{{ route('akreditasi-departments.study-programs.documents.update', $document->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="modal-body">
@@ -113,8 +113,11 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="sertificate" class="form-label">Sertifikat</label>
-                        <input type="text" class="form-control" id="sertificate" name="sertificate" value="{{ $document->sertificate }}" required>
+                        <label for="edit_sertificate" class="form-label">Sertifikat</label>
+                        <input type="file" class="form-control" id="edit_sertificate" name="sertificate" accept=".pdf">
+                        @if($document->sertificate)
+                            <small class="form-text text-muted">File saat ini: {{ Storage::url($document->sertificate) }}</small>
+                        @endif
                     </div>
                     <div class="mb-3">
                         <label for="period" class="form-label">Periode</label>

@@ -76,8 +76,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/akreditasi-departments/{department}', [AkreditasiController::class, 'destroy'])->name('akreditasi-departments.destroy');
     Route::get('/akreditasi-departments/{akreditasiStudyProgram}/documents', [AkreditasiController::class, 'showDocuments'])->name('akreditasi-departments.study-programs.documents.index');
     Route::post('/akreditasi-departments/{akreditasiStudyProgram}/documents', [AkreditasiController::class, 'storeDocument'])->name('akreditasi-departments.study-programs.documents.store');
-    Route::put('/akreditasi-departments/documents/{document}', [AkreditasiController::class, 'updateDocument'])->name('akreditasi-departments.documents.update');
-    Route::delete('/akreditasi-departments/documents/{document}', [AkreditasiController::class, 'destroyDocument'])->name('akreditasi-departments.documents.destroy');
+    Route::put('/akreditasi-departments/documents/{document}', [AkreditasiController::class, 'updateDocument'])->name('akreditasi-departments.study-programs.documents.update');
+    Route::delete('/akreditasi-departments/documents/{document}', [AkreditasiController::class, 'destroyDocument'])->name('akreditasi-departments.study-programs.documents.destroy');
     Route::delete('/akreditasi-departments/study-programs/{studyProgram}', [AkreditasiController::class, 'destroyStudyProgram'])->name('akreditasi-departments.study-programs.destroy');
     Route::put('/akreditasi-departments/study-programs/{studyProgram}', [AkreditasiController::class, 'updateStudyProgram'])->name('akreditasi-departments.study-programs.update');
 });

@@ -7,6 +7,7 @@ use App\Models\AkreditasiStudyProgram;
 use App\Models\StudyProgramDocument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AkreditasiController extends Controller
 {
@@ -90,17 +91,17 @@ class AkreditasiController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'category' => 'required|string|max:255',
-            'sertificate' => 'required|string|max:255',
+            'sertificate' => 'required|file|max:10240', // max 10MB
             'period' => 'required|string|max:255',
         ]);
 
-        $akreditasiStudyProgram->studyProgramDocuments()->create([
-            'name' => $request->name,
-            'category' => $request->category,
-            'sertificate' => $request->sertificate,
-            'period' => $request->period,
-            'status' => 'Active' // Status default
-        ]);
+        $data = $request->only(['category', 'period', 'name','sertificate']);
+        if ($request->hasFile('sertificate')) {
+            $data['sertificate'] = $request->file('sertificate')->store('sertificates', 'public');
+        } else {
+            return redirect()->route('akreditasi-departments.index')->with('error', 'File not found');
+        }
+        $akreditasiStudyProgram->studyProgramDocuments()->create($data);
 
         return redirect()->back()->with('success', 'Dokumen berhasil ditambahkan.');
     }
@@ -108,18 +109,25 @@ class AkreditasiController extends Controller
     public function updateDocument(Request $request, StudyProgramDocument $document)
     {
         $request->validate([
+            'name' => 'required|string|max:255',
             'category' => 'required|string|max:255',
-            'sertificate' => 'required|string|max:255',
+            'sertificate' => 'nullable|file|max:10240', // max 10MB
             'period' => 'required|string|max:255',
         ]);
 
-        $document->update([
-            'category' => $request->category,
-            'sertificate' => $request->sertificate,
-            'period' => $request->period,
-            'name' => $request->name,
-            // Status tidak diubah di sini
-        ]);
+        $data = $request->only(['category', 'period', 'name','sertificate']);
+
+        if ($request->hasFile('sertificate')) {
+            // Hapus file lama jika ada
+            if ($document->sertificate) {
+                Storage::disk('public')->delete($document->sertificate);
+            }
+            
+            $path = $request->file('sertificate')->store('sertificates', 'public');
+            $data['sertificate'] = $path;
+        }
+
+        $document->update($data);
 
         return redirect()->back()->with('success', 'Dokumen berhasil diperbarui.');
     }
