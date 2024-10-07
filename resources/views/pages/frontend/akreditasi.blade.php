@@ -98,9 +98,9 @@
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
-                                                            <th>TITLE</th>
-                                                            <th>CATEGORIES</th>
-                                                            <th>PERIOD</th>
+                                                            <th>SERTIFIKAT</th>
+                                                            <th>KATEGORI</th>
+                                                            <th>PERIODE</th>
                                                             <th>DOWNLOAD</th>
                                                         </tr>
                                                     </thead>
@@ -117,7 +117,7 @@
                                                                         </small>
                                                                     </div>
                                                                 </td>
-                                                                <td>{{ $studyProgram->name }}</td>
+                                                                <td>{{ $document->category }}</td>
                                                                 <td>{{ $document->period }}</td>
                                                                 <td>
                                                                     <a href="{{ $document->sertificate }}" class="btn btn-primary btn-sm download-btn" data-document-id="{{ $document->id }}" target="_blank">
