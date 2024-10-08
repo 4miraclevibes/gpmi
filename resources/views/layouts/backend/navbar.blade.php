@@ -66,6 +66,13 @@
                   <div data-i18n="Akreditasi">Akreditasi</div>
                 </a>
               </li>
+              <!-- Content -->
+              <li class="menu-item {{ Route::is('content*') ? 'active' : '' }}">
+                <a href="{{ route('content.index') }}" class="menu-link text-white">
+                  <i class="menu-icon tf-icons bx bxs-file"></i>
+                  <div data-i18n="Content">Content</div>
+                </a>
+              </li>
             </ul>
           </aside>
           <!-- / Menu -->

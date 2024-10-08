@@ -277,24 +277,14 @@
                 <img src="https://i0.wp.com/bpmi.unp.ac.id/wp-content/themes/hestia/assets/img/feat1.png?w=750&ssl=1" alt="Tujuan Icon">
             </div>
             <h3 class="goal-heading">Tujuan (Goal)</h3>
-            <p class="goal-description">
-                Badan Penjaminan Mutu UNP bertujuan menyiapkan sistem penjaminan mutu yang efektif dan efisien dalam rangka pelaksanaan tridharma perguruan tinggi yang bermutu.
-            </p>
-            <p class="goal-description">
-                The UNP Quality Assurance Agency aims to prepare an effective and efficient quality assurance system in the context of implementing the Tridharma of quality higher education.
-            </p>
+            <p class="goal-description">{{ $content->tujuan ?? 'Tujuan' }}</p>
         </div>
         <div class="goal-item">
             <div class="goal-icon">
                 <img src="https://i0.wp.com/bpmi.unp.ac.id/wp-content/themes/hestia/assets/img/feat2.png?w=750&ssl=1" alt="Sasaran Icon">
             </div>
             <h3 class="goal-heading">Sasaran (Objective)</h3>
-            <p class="goal-description">
-                Tercapainya standar minimal pelaksanaan tridharma perguruan tinggi sesuai dengan standar nasional pendidikan tinggi.
-            </p>
-            <p class="goal-description">
-                Achieved the minimum standards for the implementation of higher education Tridharma in accordance with the national standards of higher education.
-            </p>
+            <p class="goal-description">{{ $content->sasaran ?? 'Sasaran' }}</p>
         </div>
     </div>
 </div>
@@ -304,18 +294,10 @@
     <div class="duties-container">
         <div class="duties-content">
             <h2 class="duties-title">Tugas dan Fungsi</h2>
-            <p class="duties-description">
-                Badan Penjamin Mutu Internal berfungsi melaksanakan, mengkoordinasikan, memantau dan mengevaluasi kegiatan penjaminan mutu akademik UNP.
-            </p>
-            <p class="duties-description">
-                Duties and Functions
-            </p>
-            <p class="duties-description">
-                The Internal Quality Assurance Agency has the function of implementing, coordinating, monitoring and evaluating UNP academic quality assurance activities.
-            </p>
+            <p class="duties-description">{{ $content->tugas ?? 'Tugas' }}</p>
         </div>
         <div class="duties-image">
-            <img src="https://i0.wp.com/bpmi.unp.ac.id/wp-content/uploads/2023/02/67ef980989f3e232b4b51f266d359d13-edited.jpg?resize=768%2C432&ssl=1" alt="Tugas dan Fungsi">
+            <img src="{{ Storage::url($content->tugas_image) }}" alt="Tugas dan Fungsi">
         </div>
     </div>
 </div>

@@ -11,6 +11,7 @@ use App\Http\Controllers\NestingPageController;
 use App\Http\Controllers\PageContentController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AkreditasiController;
+use App\Http\Controllers\ContentController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -80,6 +81,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/akreditasi-departments/documents/{document}', [AkreditasiController::class, 'destroyDocument'])->name('akreditasi-departments.study-programs.documents.destroy');
     Route::delete('/akreditasi-departments/study-programs/{studyProgram}', [AkreditasiController::class, 'destroyStudyProgram'])->name('akreditasi-departments.study-programs.destroy');
     Route::put('/akreditasi-departments/study-programs/{studyProgram}', [AkreditasiController::class, 'updateStudyProgram'])->name('akreditasi-departments.study-programs.update');
+    //content
+    Route::get('/content', [ContentController::class, 'index'])->name('content.index');
+    Route::put('/content/{content}', [ContentController::class, 'update'])->name('content.update');
 });
 
 require __DIR__.'/auth.php';

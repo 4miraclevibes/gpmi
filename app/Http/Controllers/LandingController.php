@@ -9,7 +9,7 @@ use App\Models\PageContent;
 use App\Models\ParentPage;
 use App\Models\ChildPage;
 use App\Models\AkreditasiDepartment;
-
+use App\Models\Content;
 class LandingController extends Controller
 {
     public function index()
@@ -19,7 +19,8 @@ class LandingController extends Controller
         $nestingPages = NestingPage::all();
         $parentPages = ParentPage::all();
         //Variable Local
-        return view('pages.frontend.beranda', compact('pages', 'nestingPages', 'parentPages'));
+        $content = Content::first();
+        return view('pages.frontend.beranda', compact('pages', 'nestingPages', 'parentPages', 'content'));
     }
 
     public function pageShow($id)
