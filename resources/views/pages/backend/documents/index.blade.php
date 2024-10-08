@@ -74,3 +74,15 @@
 </div>
 <!-- / Content -->
 @endsection
+@section('scripts')
+<script>
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      alert('URL berhasil disalin ke clipboard');
+    }).catch(function(err) {
+      console.error('Gagal menyalin URL: ', err);
+    });
+  }
+</script>
+@endsection
+
