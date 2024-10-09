@@ -5,7 +5,7 @@
                 <img src="https://fip.unp.ac.id/img/Logo-header.png" alt="Logo" class="mb-3">
                 <p>Platform pengembangan hard skill mahasiswa yang dipersembahkan oleh ElkaMania. Platform ini menyediakan berbagai macam proyek yang dapat membantu mahasiswa untuk mengembangkan keterampilan mereka di bidang-bidang yang relevan dengan program studi mereka.</p>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <h5>Home</h5>
                 <ul class="list-unstyled">
                     <li><a href="#" class="text-white text-decoration-none">Dashboard</a></li>
@@ -14,7 +14,7 @@
                     <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <h5>Contact Us</h5>
                 <p>Dr. Dina Sukma, S.Psi, S.Pd, M.Pd</p>
             </div>
