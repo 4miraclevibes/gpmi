@@ -22,10 +22,7 @@
         <div class="row mt-4">
             <hr class="border-top border-light">
             <div class="col-11">
-                <p class="mb-0">Copyright 2024 ElkaMania, All rights reserved</p>
-            </div>
-            <div class="col-1 text-center">
-                <img src="https://fip.unp.ac.id/img/Logo-header.png" alt="Logo" class="mt-3">
+                <p class="mb-0">Copyright 2024 We FIP UNP Love Our Users</p>
             </div>
         </div>
     </div>
