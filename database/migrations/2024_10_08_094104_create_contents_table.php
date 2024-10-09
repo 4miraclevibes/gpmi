@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
-            $table->string('tujuan');
-            $table->string('sasaran');
-            $table->string('tugas');
+            $table->longText('tujuan');
+            $table->longText('sasaran');
+            $table->longText('tugas');
             $table->string('tugas_image')->nullable();
             $table->timestamps();
         });
