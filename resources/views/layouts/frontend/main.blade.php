@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,6 +53,18 @@
     @include('layouts.frontend.navbar')
     @yield('content')
     @include('layouts.frontend.footer')
+    
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'id',
+          includedLanguages: 'en,id,es', // Bahasa Inggris, Indonesia, dan Spanyol
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google-translate-element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -91,6 +103,18 @@
         // Toggle navbar saat tombol toggler diklik
         navbarToggler.addEventListener('click', function() {
             bsCollapse.toggle();
+        });
+
+        // Tambahkan kode berikut untuk menangani perubahan bahasa
+        var languageItems = document.querySelectorAll('.dropdown-item[data-lang]');
+        languageItems.forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                var lang = this.getAttribute('data-lang');
+                var currentUrl = window.location.href;
+                var newUrl = currentUrl.replace(/\/(en|id)/, '/' + lang);
+                window.location.href = newUrl;
+            });
         });
     });
     </script>

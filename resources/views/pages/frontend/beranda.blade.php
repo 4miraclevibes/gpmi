@@ -111,25 +111,27 @@
 
     .duties-section {
         position: relative;
-        background-image: url('path/to/your/background-image.jpg');
+        background-image: url('https://filemanager.layananberhentikuliah.com/storage/files/ZrMmrRX40ROforr13PP7p1Op10rzMDsMhyy4SYY1.jpg');
         background-size: cover;
         background-position: center;
         color: white;
         padding: 4rem 0;
     }
 
-    .duties-overlay {
+    .duties-section::before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.5); /* Ubah nilai alpha (0.5) sesuai kebutuhan */
+        z-index: 1;
     }
 
     .duties-container {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;

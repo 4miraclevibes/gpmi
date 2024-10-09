@@ -48,28 +48,13 @@
                     </ul>
                   </li>
             </ul>
-            @if (Auth::check())
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <form action="{{ route('logout') }}" method="post">
-                            @csrf
-                            <button type="submit" class="nav-link">Logout</button>
-                        </form>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-                    </li>
-                </ul>
-            @else
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-danger" href="#">Join</a>
+                    <a class="nav-link" href="#" id="google-translate-element">
+                        <i class="bi bi-translate"></i> Terjemahkan
+                    </a>
                 </li>
             </ul>
-            @endif
         </div>
     </div>
 </nav>
