@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-2">
                 <h5>Contact Us</h5>
-                <p>kholid.hasibuan35@gmail.com</p>
+                <p>Dr. Dina Sukma, S.Psi, S.Pd, M.Pd</p>
             </div>
         </div>
         <div class="row mt-4">
