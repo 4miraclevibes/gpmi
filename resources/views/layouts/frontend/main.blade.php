@@ -58,7 +58,7 @@
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({
           pageLanguage: 'id',
-          includedLanguages: 'en,id,es', // Bahasa Inggris, Indonesia, dan Spanyol
+          includedLanguages: 'en,id', // Bahasa Inggris, Indonesia, dan Spanyol
           layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google-translate-element');
       }
