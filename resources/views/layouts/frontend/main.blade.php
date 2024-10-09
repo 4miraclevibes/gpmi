@@ -104,18 +104,6 @@
         navbarToggler.addEventListener('click', function() {
             bsCollapse.toggle();
         });
-
-        // Tambahkan kode berikut untuk menangani perubahan bahasa
-        var languageItems = document.querySelectorAll('.dropdown-item[data-lang]');
-        languageItems.forEach(function(item) {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                var lang = this.getAttribute('data-lang');
-                var currentUrl = window.location.href;
-                var newUrl = currentUrl.replace(/\/(en|id)/, '/' + lang);
-                window.location.href = newUrl;
-            });
-        });
     });
     </script>
     @yield('scripts')

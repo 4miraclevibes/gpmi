@@ -85,5 +85,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/content', [ContentController::class, 'index'])->name('content.index');
     Route::put('/content/{content}', [ContentController::class, 'update'])->name('content.update');
 });
-
 require __DIR__.'/auth.php';
