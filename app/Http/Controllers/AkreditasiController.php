@@ -164,4 +164,17 @@ class AkreditasiController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage())->withInput();
         }
     }
+
+    public function storeStudyProgram(Request $request, AkreditasiDepartment $department)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]); 
+
+        $department->akreditasiStudyPrograms()->create([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->back()->with('success', 'Program studi berhasil ditambahkan.');
+    }
 }

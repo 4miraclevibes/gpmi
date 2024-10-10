@@ -79,6 +79,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/akreditasi-departments/{akreditasiStudyProgram}/documents', [AkreditasiController::class, 'storeDocument'])->name('akreditasi-departments.study-programs.documents.store');
     Route::put('/akreditasi-departments/documents/{document}', [AkreditasiController::class, 'updateDocument'])->name('akreditasi-departments.study-programs.documents.update');
     Route::delete('/akreditasi-departments/documents/{document}', [AkreditasiController::class, 'destroyDocument'])->name('akreditasi-departments.study-programs.documents.destroy');
+    Route::post('/akreditasi-departments/{department}/study-programs', [AkreditasiController::class, 'storeStudyProgram'])->name('akreditasi-departments.study-programs.store');
     Route::delete('/akreditasi-departments/study-programs/{studyProgram}', [AkreditasiController::class, 'destroyStudyProgram'])->name('akreditasi-departments.study-programs.destroy');
     Route::put('/akreditasi-departments/study-programs/{studyProgram}', [AkreditasiController::class, 'updateStudyProgram'])->name('akreditasi-departments.study-programs.update');
     //content

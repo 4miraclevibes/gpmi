@@ -46,6 +46,9 @@
               </ul>
             </td>
             <td>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createStudyProgramModal{{ $department->id }}">
+                Tambah Program Studi
+              </button>
               <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editDepartmentModal{{ $department->id }}">
                 Edit
               </button>
@@ -132,6 +135,35 @@
   </div>
 </div>
 @endforeach
+
+<!-- Modal Tambah Program Studi -->
+@foreach ($departments as $department)
+<div class="modal fade" id="createStudyProgramModal{{ $department->id }}" tabindex="-1" aria-labelledby="createStudyProgramModalLabel{{ $department->id }}" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createStudyProgramModalLabel{{ $department->id }}">Tambah Program Studi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="{{ route('akreditasi-departments.study-programs.store', $department->id) }}" method="POST">
+        @csrf
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="study_program_name{{ $department->id }}" class="form-label">Nama Program Studi</label>
+            <input type="text" class="form-control" id="study_program_name{{ $department->id }}" name="name" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+@endforeach
+
+
 
 <!-- Modal Edit Program Studi -->
 @foreach ($departments as $department)
