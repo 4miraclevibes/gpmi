@@ -3,11 +3,17 @@
         <div class="row">
             <div class="col-md-8">
                 <img src="https://fip.unp.ac.id/img/Logo-header.png" alt="Logo" class="mb-3">
-                <p>Platform pengembangan hard skill mahasiswa yang dipersembahkan oleh ElkaMania. Platform ini menyediakan berbagai macam proyek yang dapat membantu mahasiswa untuk mengembangkan keterampilan mereka di bidang-bidang yang relevan dengan program studi mereka.</p>
+                <p>
+                    Gugus Penjamin Mutu Internal (GPMI) FIP UNP bertugas memastikan pelaksanaan Sistem Penjaminan Mutu Internal
+                    (SPMI) di tingkat fakultas dan program studi melalui mekanisme PPEPP (Pelaksanaan, Evaluasi, Pengendalian Standar Pendidikan Tinggi).
+                    GPMI mendukung akreditasi program studi, menyiapkan Audit Mutu Internal (AMI), serta menyusun Laporan Evaluasi Diri.
+                    Tujuan utamanya adalah meningkatkan mutu akademik fakultas secara berkelanjutan sesuai standar yang ditetapkan 
+                    oleh Badan Penjaminan Mutu Internal UNP
+                </p>
             </div>
             <div class="col-md-4">
                 <h5>Contact Us</h5>
-                <p>Dr. Dina Sukma, S.Psi, S.Pd, M.Pd</p>
+                <p>Dr. Dina Sukma, S.Psi, S.Pd, M.Pd</p>
             </div>
         </div>
         <div class="row mt-4">
