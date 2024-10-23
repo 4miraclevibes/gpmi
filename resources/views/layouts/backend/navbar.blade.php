@@ -73,6 +73,13 @@
                   <div data-i18n="Content">Content</div>
                 </a>
               </li>
+              <!-- Leader -->
+              <li class="menu-item {{ Route::is('leaders*') ? 'active' : '' }}">
+                <a href="{{ route('leaders.index') }}" class="menu-link text-white">
+                  <i class="menu-icon tf-icons bx bxs-file"></i>
+                  <div data-i18n="Leader">Leader</div>
+                </a>
+              </li>
             </ul>
           </aside>
           <!-- / Menu -->

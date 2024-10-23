@@ -10,6 +10,8 @@ use App\Models\ParentPage;
 use App\Models\ChildPage;
 use App\Models\AkreditasiDepartment;
 use App\Models\Content;
+use App\Models\Leader;
+
 class LandingController extends Controller
 {
     public function index()
@@ -20,7 +22,8 @@ class LandingController extends Controller
         $parentPages = ParentPage::all();
         //Variable Local
         $content = Content::first();
-        return view('pages.frontend.beranda', compact('pages', 'nestingPages', 'parentPages', 'content'));
+        $leaders = Leader::all();
+        return view('pages.frontend.beranda', compact('pages', 'nestingPages', 'parentPages', 'content', 'leaders'));
     }
 
     public function pageShow($id)

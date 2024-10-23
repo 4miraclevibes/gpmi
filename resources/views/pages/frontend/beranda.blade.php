@@ -308,38 +308,16 @@
     <h2 class="management-title">Unsur Pimpinan</h2>
     <p class="management-subtitle">Management</p>
     <div class="management-container">
+        @foreach ($leaders as $leader)
         <div class="management-item">
             <div class="management-image">
-                <img src="https://i0.wp.com/bpmi.unp.ac.id/wp-content/uploads/2024/07/Abna-Hidayati34.jpeg?w=776&ssl=1" alt="Prof. Dr. Abna Hidayati, M.Pd.">
+                <img src="{{ Storage::url($leader->image) }}" alt="{{ $leader->name }}">
             </div>
-            <h3 class="management-name">Prof. Dr. Abna Hidayati, M.Pd.</h3>
-            <p class="management-position">KEPALA/PIMPINAN</p>
-            <p class="management-position-en">Head of Quality Assurance</p>
+            <h3 class="management-name">{{ $leader->name }}</h3>
+            <p class="management-position">{{ $leader->title }}</p>
+            <p class="management-position-en">{{ $leader->title_en }}</p>
         </div>
-        <div class="management-item">
-            <div class="management-image">
-                <img src="https://i0.wp.com/bpmi.unp.ac.id/wp-content/uploads/2023/10/Ofianto2-scaled.jpg?w=1920&ssl=1" alt="Dr. Ofianto, M.Pd.">
-            </div>
-            <h3 class="management-name">Dr. Ofianto, M.Pd.</h3>
-            <p class="management-position">KEPALA DIVISI PENJAMINAN MUTU</p>
-            <p class="management-position-en">Head of Quality Assurance Division</p>
-        </div>
-        <div class="management-item">
-            <div class="management-image">
-                <img src="https://i0.wp.com/bpmi.unp.ac.id/wp-content/uploads/2023/10/Ulfia2.jpg?w=1905&ssl=1" alt="Dr. Ulfia Rahmi, M.Pd.">
-            </div>
-            <h3 class="management-name">Dr. Ulfia Rahmi, M.Pd.</h3>
-            <p class="management-position">KEPALA DIVISI AKREDITASI</p>
-            <p class="management-position-en">Head of Accreditation Division</p>
-        </div>
-        <div class="management-item">
-            <div class="management-image">
-                <img src="https://i0.wp.com/bpmi.unp.ac.id/wp-content/uploads/2024/07/Anto3.jpg?w=716&ssl=1" alt="Hardiyanto, ST, M.CIO.">
-            </div>
-            <h3 class="management-name">Hardiyanto, ST, M.CIO.</h3>
-            <p class="management-position">KEPALA SUBBAGIAN UMUM</p>
-            <p class="management-position-en">Head of General Affairs</p>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection

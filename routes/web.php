@@ -12,6 +12,7 @@ use App\Http\Controllers\PageContentController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AkreditasiController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\LeaderController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -85,5 +86,10 @@ Route::middleware('auth')->group(function () {
     //content
     Route::get('/content', [ContentController::class, 'index'])->name('content.index');
     Route::put('/content/{content}', [ContentController::class, 'update'])->name('content.update');
+    // Leader routes
+    Route::get('/leaders', [LeaderController::class, 'index'])->name('leaders.index');
+    Route::post('/leaders', [LeaderController::class, 'store'])->name('leaders.store');
+    Route::patch('/leaders/{leader}', [LeaderController::class, 'update'])->name('leaders.update');
+    Route::delete('/leaders/{leader}', [LeaderController::class, 'destroy'])->name('leaders.destroy');
 });
 require __DIR__.'/auth.php';
