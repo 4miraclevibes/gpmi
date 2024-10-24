@@ -21,7 +21,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://fip.unp.ac.id/img/Logo-header.png" />
+    <link rel="icon" type="image/x-icon" href="https://filemanager.layananberhentikuliah.com/storage/files/mrxw9L0vK3DZISRJ0YshqjcCQKN6NabpATvLLW4Q.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

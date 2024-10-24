@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://fip.unp.ac.id/img/Logo-header.png" />
+    <link rel="icon" type="image/x-icon" href="https://filemanager.layananberhentikuliah.com/storage/files/mrxw9L0vK3DZISRJ0YshqjcCQKN6NabpATvLLW4Q.png" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

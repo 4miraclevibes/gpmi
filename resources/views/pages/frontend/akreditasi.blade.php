@@ -104,7 +104,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach($studyProgram->studyProgramDocuments as $document)
+                                                        @foreach($studyProgram->studyProgramDocuments->sortByDesc('created_at') as $document)
                                                             <tr>
                                                                 <td class="d-flex align-items-center">
                                                                     <div class="me-3" style="width: 40px; height: 40px; background-image: url('https://baa.uad.ac.id/wp-content/plugins/download-manager/assets/file-type-icons/pdf.svg'); background-size: cover; background-position: center;"></div>

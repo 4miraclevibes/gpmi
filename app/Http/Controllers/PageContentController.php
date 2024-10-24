@@ -6,6 +6,7 @@ use App\Models\NestingPage;
 use App\Models\PageContent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class PageContentController extends Controller
 {
@@ -27,11 +28,13 @@ class PageContentController extends Controller
             'body' => 'required|string',
             'background_image' => 'nullable|url',
             'status' => 'required|in:active,inactive',
+            'created_at' => 'required|date',
         ]);
         $data = $request->all();
         $data['user_id'] = Auth::id();
         $data['nesting_page_id'] = $nestingPage->id;
         $data['slug'] = Str::slug($request->name);
+        $data['created_at'] = Carbon::parse($request->created_at)->format('Y-m-d');
 
         PageContent::create($data);
 
@@ -50,10 +53,12 @@ class PageContentController extends Controller
             'body' => 'required|string',
             'background_image' => 'nullable|url',
             'status' => 'required|in:active,inactive',
+            'created_at' => 'required|date',
         ]);
 
         $data = $request->all();
         $data['slug'] = Str::slug($request->name);
+        $data['created_at'] = Carbon::parse($request->created_at)->format('Y-m-d');
 
         $pageContent->update($data);
 

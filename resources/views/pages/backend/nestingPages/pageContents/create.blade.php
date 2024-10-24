@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
-        <h5 class="card-header">Buat Konten Halaman Baru</h5>
+        <h5 class="card-header">Buat Konten <span class="text-success">{{ $nestingPage->name }}</span></h5>
         <div class="card-body">
             <form action="{{ route('nesting-page.page-contents.store', $nestingPage) }}" method="POST">
                 @csrf
@@ -19,6 +19,10 @@
                     <label for="background_image" class="form-label">URL Gambar Latar Belakang</label>
                     <input type="url" class="form-control" id="background_image" name="background_image">
                 </div>
+                <div class="mb-3">
+                    <label for="created_at" class="form-label">Tanggal Dibuat</label>
+                    <input type="date" class="form-control" id="created_at" name="created_at" value="{{ now()->format('Y-m-d') }}">
+                  </div>
                 <div class="mb-3">
                     <label for="status" class="form-label">Status</label>
                     <select class="form-control" id="status" name="status" required>

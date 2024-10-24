@@ -79,7 +79,7 @@ class LandingController extends Controller
         $parentPages = ParentPage::all();
         
         //Variable Local
-        $departments = AkreditasiDepartment::with(['akreditasiStudyPrograms.studyProgramDocuments'])->orderBy('created_at', 'asc')->get();
+        $departments = AkreditasiDepartment::with(['akreditasiStudyPrograms.studyProgramDocuments'])->orderBy('created_at', 'desc')->get();
         
         return view('pages.frontend.akreditasi', compact('pages', 'nestingPages', 'parentPages', 'departments'));
     }

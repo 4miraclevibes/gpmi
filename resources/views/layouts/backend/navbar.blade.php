@@ -4,7 +4,7 @@
             <div class="app-brand demo m-0 border-bottom" style="background-color: #075308 !important">
               <a href="{{ route('landing') }}" class="app-brand-link">
                 <span class="app-brand-logo demo">
-                  <img src="https://fip.unp.ac.id/img/Logo-header.png" style="max-width: 200px" alt="">
+                  <img src="https://filemanager.layananberhentikuliah.com/storage/files/mrxw9L0vK3DZISRJ0YshqjcCQKN6NabpATvLLW4Q.png" style="max-width: 150px" alt="">
                 </span>
               </a>
   
