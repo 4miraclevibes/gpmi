@@ -257,6 +257,63 @@
         font-size: 0.9rem;
         color: #999;
     }
+
+    .news-section {
+        padding: 4rem 0;
+        background-color: #fff;
+    }
+
+    .news-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .news-item {
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .news-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .news-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .news-content {
+        padding: 1.5rem;
+    }
+
+    .news-item-title {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .news-item-meta {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+    .news-item-excerpt {
+        font-size: 1rem;
+        color: #444;
+        line-height: 1.5;
+    }
 </style>
 @endsection
 
@@ -300,6 +357,30 @@
         </div>
         <div class="duties-image">
             <img src="{{ Storage::url($content->tugas_image) }}" alt="Tugas dan Fungsi">
+        </div>
+    </div>
+</div>
+
+<div class="news-section">
+    <div class="news-container">
+        <div class="news-grid">
+            @foreach ($berita->where('status', 'active')->sortByDesc('created_at')->take(3) as $item)
+            <div class="news-item">
+                <a href="{{ route('nesting-pages.page-contents.show', [$item->nestingPage->id, $item->id]) }}">
+                    <img src="{{ $item->background_image ?? 'https://filemanager.layananberhentikuliah.com/storage/files/W3NJ8rGt1hdIv21wQwL7K896QJvnxXmyN8WzzxQd.jpg' }}" alt="{{ $item->name }}" class="news-image">
+                </a>
+                <div class="news-content">
+                    <a class="news-item-title" href="{{ route('nesting-pages.page-contents.show', [$item->nestingPage->id, $item->id]) }}">{{ $item->name }}</a>
+                    <p class="news-item-meta">
+                        <span class="author">{{ $item->user->name }}</span> |
+                        <span class="date">{{ $item->created_at->format('d F Y') }}</span>
+                    </p>
+                    <p class="news-item-excerpt">
+                        {{ Str::limit(strip_tags($item->body), 100) }}
+                    </p>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
 </div>

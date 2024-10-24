@@ -23,7 +23,14 @@ class LandingController extends Controller
         //Variable Local
         $content = Content::first();
         $leaders = Leader::all();
-        return view('pages.frontend.beranda', compact('pages', 'nestingPages', 'parentPages', 'content', 'leaders'));
+        
+        // Mengambil PageContent yang terkait dengan NestingPage bernama 'Berita'
+        $berita = PageContent::whereHas('nestingPage', function($query) {
+            $query->where('name', 'Berita');
+        })->get(); // Gunakan get() jika Anda ingin mengambil semua berita
+        // dd($berita);
+
+        return view('pages.frontend.beranda', compact('pages', 'nestingPages', 'parentPages', 'berita', 'content', 'leaders'));
     }
 
     public function pageShow($id)
