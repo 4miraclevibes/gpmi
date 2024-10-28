@@ -134,6 +134,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="description-container bg-white text-dark" style="max-height: 1920px; overflow-y: auto;">
+                        <p class="mt-3 description text-dark bg-white">
+                            INFORMASI TERKAIT SERTIFIKAT AKREDITASI
+                            PROGRAM STUDI DI FAKULTAS ILMU PENDIDIKAN UNIVERSITAS NEGERI PADANG
+                            <br> <br>
+                            Sertifikat Akreditasi Program Studi Yang terdapat Di Fakultas Ilmu Pendidikan Universitas Negeri Padang,
+                            Sertifikat Akreditasi Program Studi FIP UNP dapat di download dibawah ini:
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
