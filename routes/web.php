@@ -13,6 +13,13 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AkreditasiController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\LeaderController;
+use Illuminate\Support\Facades\Artisan;
+
+//migrate
+Route::get('/migrate', function () {
+    Artisan::call('migrate:refresh --path=/database/migrations/2024_10_02_201652_create_page_contents_table.php');
+    return back()->with('success', 'Migrasi berhasil dilakukan');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

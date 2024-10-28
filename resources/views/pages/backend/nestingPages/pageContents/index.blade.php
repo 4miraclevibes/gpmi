@@ -19,6 +19,9 @@
             <th class="text-white">Nama</th>
             <th class="text-white">Status</th>
             <th class="text-white">Penulis</th>
+            <th class="text-white">Admin</th>
+            <th class="text-white">Tanggal Dibuat</th>
+            <th class="text-white">Gambar</th>
             <th class="text-white">Aksi</th>
           </tr>
         </thead>
@@ -28,7 +31,10 @@
             <th scope="row">{{ $loop->iteration }}</th>
             <td>{{ $pageContent->name }}</td>
             <td>{{ $pageContent->status }}</td>
+            <td>{{ $pageContent->author }}</td>
             <td>{{ $pageContent->user->name }}</td>
+            <td>{{ $pageContent->created_at->format('d-m-Y') }}</td>
+            <td><a href="{{ asset(Storage::url($pageContent->background_image)) }}" target="_blank" class="btn btn-primary btn-sm">Lihat</a></td>
             <td>
               <a href="{{ route('nesting-page.page-contents.edit', $pageContent->id) }}" class="btn btn-warning btn-sm">Edit</a>
               <form action="{{ route('nesting-page.page-contents.destroy', $pageContent->id) }}" method="POST" style="display:inline-block;">

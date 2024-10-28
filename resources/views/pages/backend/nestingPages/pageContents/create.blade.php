@@ -5,7 +5,7 @@
     <div class="card">
         <h5 class="card-header">Buat Konten <span class="text-success">{{ $nestingPage->name }}</span></h5>
         <div class="card-body">
-            <form action="{{ route('nesting-page.page-contents.store', $nestingPage) }}" method="POST">
+            <form action="{{ route('nesting-page.page-contents.store', $nestingPage) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Nama Konten</label>
@@ -23,6 +23,10 @@
                     <label for="created_at" class="form-label">Tanggal Dibuat</label>
                     <input type="date" class="form-control" id="created_at" name="created_at" value="{{ now()->format('Y-m-d') }}">
                   </div>
+                <div class="mb-3">
+                    <label for="author" class="form-label">Penulis</label>
+                    <input type="text" class="form-control" id="author" name="author" required>
+                </div>
                 <div class="mb-3">
                     <label for="status" class="form-label">Status</label>
                     <select class="form-control" id="status" name="status" required>

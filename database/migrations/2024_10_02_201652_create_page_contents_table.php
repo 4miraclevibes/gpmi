@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('nesting_page_id')->constrained('nesting_pages')->onDelete('cascade');
             $table->string('name');
+            $table->string('author');
             $table->string('slug');
             $table->string('background_image')->nullable();
             $table->longText('body');

@@ -5,7 +5,7 @@
     <div class="card">
         <h5 class="card-header">Edit Konten <span class="text-success">{{ $pageContent->nestingPage->name }}</span> <span class="text-primary">{{ $pageContent->name }}</span></h5>
         <div class="card-body">
-            <form action="{{ route('nesting-page.page-contents.update', $pageContent->id) }}" method="POST">
+            <form action="{{ route('nesting-page.page-contents.update', $pageContent->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <div class="mb-3">
@@ -24,6 +24,10 @@
                 <div class="mb-3">
                     <label for="created_at" class="form-label">Tanggal Dibuat</label>
                     <input type="date" class="form-control" id="created_at" name="created_at" value="{{ $pageContent->created_at->format('Y-m-d') }}">
+                </div>
+                <div class="mb-3">
+                    <label for="author" class="form-label">Penulis</label>
+                    <input type="text" class="form-control" id="author" name="author" value="{{ $pageContent->author }}" required>
                 </div>
                 <div class="mb-3">
                     <label for="status" class="form-label">Status</label>

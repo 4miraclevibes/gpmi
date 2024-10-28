@@ -26,12 +26,14 @@ class PageContentController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
             'body' => 'required|string',
             'background_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required|in:publish,hidden',
             'created_at' => 'required|date',
         ]);
         $data = $request->all();
+        dd($data);
         if ($request->hasFile('background_image')) {
             $data['background_image'] = $request->file('background_image')->store('page-contents', 'public');
         }
@@ -55,6 +57,7 @@ class PageContentController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
             'body' => 'required|string',
             'background_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required|in:publish,hidden',
