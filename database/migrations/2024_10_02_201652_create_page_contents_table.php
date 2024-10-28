@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('background_image')->nullable();
             $table->longText('body');
-            $table->string('status')->default('active');
+            $table->string('status')->default('publish');
             $table->timestamps();
         });
     }

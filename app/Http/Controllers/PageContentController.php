@@ -6,6 +6,7 @@ use App\Models\NestingPage;
 use App\Models\PageContent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class PageContentController extends Controller
@@ -26,14 +27,18 @@ class PageContentController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'body' => 'required|string',
-            'background_image' => 'nullable|url',
-            'status' => 'required|in:active,inactive',
+            'background_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'status' => 'required|in:publish,hidden',
             'created_at' => 'required|date',
         ]);
         $data = $request->all();
+        if ($request->hasFile('background_image')) {
+            $data['background_image'] = $request->file('background_image')->store('page-contents', 'public');
+        }
         $data['user_id'] = Auth::id();
         $data['nesting_page_id'] = $nestingPage->id;
         $data['slug'] = Str::slug($request->name);
+        
         $data['created_at'] = Carbon::parse($request->created_at)->format('Y-m-d');
 
         PageContent::create($data);
@@ -51,12 +56,16 @@ class PageContentController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'body' => 'required|string',
-            'background_image' => 'nullable|url',
-            'status' => 'required|in:active,inactive',
+            'background_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'status' => 'required|in:publish,hidden',
             'created_at' => 'required|date',
         ]);
 
         $data = $request->all();
+        if ($request->hasFile('background_image')) {
+            Storage::delete($pageContent->background_image);
+            $data['background_image'] = $request->file('background_image')->store('page-contents', 'public');
+        }
         $data['slug'] = Str::slug($request->name);
         $data['created_at'] = Carbon::parse($request->created_at)->format('Y-m-d');
 

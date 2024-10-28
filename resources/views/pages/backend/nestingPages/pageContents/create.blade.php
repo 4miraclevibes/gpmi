@@ -16,8 +16,8 @@
                     <textarea class="form-control" id="editor" name="body"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="background_image" class="form-label">URL Gambar Latar Belakang</label>
-                    <input type="url" class="form-control" id="background_image" name="background_image">
+                    <label for="background_image" class="form-label">Gambar Latar Belakang</label>
+                    <input type="file" class="form-control" id="background_image" name="background_image">
                 </div>
                 <div class="mb-3">
                     <label for="created_at" class="form-label">Tanggal Dibuat</label>
@@ -26,8 +26,8 @@
                 <div class="mb-3">
                     <label for="status" class="form-label">Status</label>
                     <select class="form-control" id="status" name="status" required>
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
+                        <option value="publish">Publish</option>
+                        <option value="hidden">Hidden</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>

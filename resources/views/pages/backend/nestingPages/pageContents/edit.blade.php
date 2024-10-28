@@ -17,8 +17,9 @@
                     <textarea class="form-control" id="editor" name="body">{{ $pageContent->body }}</textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="background_image" class="form-label">URL Gambar Latar Belakang</label>
-                    <input type="url" class="form-control" id="background_image" name="background_image" value="{{ $pageContent->background_image }}">
+                    <label for="background_image" class="form-label">Gambar Latar Belakang</label>
+                    <input type="file" class="form-control" id="background_image" name="background_image">
+                    <a href="{{ asset(Storage::url($pageContent->background_image)) }}" target="_blank" class="btn btn-primary btn-sm mx-2">Lihat</a>
                 </div>
                 <div class="mb-3">
                     <label for="created_at" class="form-label">Tanggal Dibuat</label>
@@ -27,8 +28,8 @@
                 <div class="mb-3">
                     <label for="status" class="form-label">Status</label>
                     <select class="form-control" id="status" name="status" required>
-                        <option value="active" {{ $pageContent->status == 'active' ? 'selected' : '' }}>Active</option>
-                        <option value="inactive" {{ $pageContent->status == 'inactive' ? 'selected' : '' }}>Inactive</option>
+                        <option value="publish" {{ $pageContent->status == 'publish' ? 'selected' : '' }}>Publish</option>
+                        <option value="hidden" {{ $pageContent->status == 'hidden' ? 'selected' : '' }}>Hidden</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Perbarui</button>
