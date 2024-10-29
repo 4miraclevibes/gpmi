@@ -4,7 +4,7 @@
             <div class="app-brand demo m-0 border-bottom" style="background-color: #075308 !important">
               <a href="{{ route('landing') }}" class="app-brand-link">
                 <span class="app-brand-logo demo">
-                  <img src="https://filemanager.layananberhentikuliah.com/storage/files/mrxw9L0vK3DZISRJ0YshqjcCQKN6NabpATvLLW4Q.png" style="max-width: 150px" alt="">
+                  <img src="https://filemanager.layananberhentikuliah.com/storage/files/WvEebn5l9SpYXZKATBrOi1rgsM1Skc6TpQFBPjVa.png" style="max-width: 150px" alt="">
                 </span>
               </a>
   
@@ -28,28 +28,28 @@
               <li class="menu-item {{ Route::is('users*') ? 'active' : '' }}">
                 <a href="{{ route('users.index') }}" class="menu-link text-white">
                   <i class="menu-icon tf-icons bx bxs-user"></i>
-                  <div data-i18n="Users">Users</div>
+                  <div data-i18n="Users">Admin</div>
                 </a>
               </li>
               <!-- Documents -->
               <li class="menu-item {{ Route::is('documents*') ? 'active' : '' }}">
                 <a href="{{ route('documents.index') }}" class="menu-link text-white">
                   <i class="menu-icon tf-icons bx bxs-file"></i>
-                  <div data-i18n="Documents">Documents</div>
+                  <div data-i18n="Documents">File Manager</div>
                 </a>
               </li>
               <!-- Pages -->
               <li class="menu-item {{ Route::is('page*') ? 'active' : '' }}">
                 <a href="{{ route('page.index') }}" class="menu-link text-white">
                   <i class="menu-icon tf-icons bx bxs-file"></i>
-                  <div data-i18n="Pages">Pages</div>
+                  <div data-i18n="Pages">Halaman</div>
                 </a>
               </li>
               <!-- Parent Pages -->
               <li class="menu-item {{ Route::is('parent-pages*') ? 'active' : '' }}">
                 <a href="{{ route('parent-pages.index') }}" class="menu-link text-white">
                   <i class="menu-icon tf-icons bx bxs-file"></i>
-                  <div data-i18n="Parent Pages">Parent Pages</div>
+                  <div data-i18n="Parent Pages">2 Menu</div>
                 </a>
               </li>
               <!-- Nesting Pages -->

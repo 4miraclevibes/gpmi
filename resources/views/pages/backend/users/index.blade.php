@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="card mt-2">
-    <h5 class="card-header">Table Users</h5>
+    <h5 class="card-header">Table Admin</h5>
     <div class="table-responsive text-nowrap p-3">
       <table class="table" id="example">
         <thead>

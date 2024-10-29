@@ -13,7 +13,7 @@ class AkreditasiController extends Controller
 {
     public function index()
     {
-        $departments = AkreditasiDepartment::with('akreditasiStudyPrograms')->get();
+        $departments = AkreditasiDepartment::with('akreditasiStudyPrograms')->orderBy('created_at', 'desc')->get();
         return view('pages.backend.akreditasi.index', compact('departments'));
     }
 

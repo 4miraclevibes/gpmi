@@ -135,12 +135,22 @@
                         </div>
                     </div>
                     <div class="description-container bg-white text-dark" style="max-height: 1920px; overflow-y: auto;">
-                        <p class="mt-3 description text-dark bg-white">
-                            INFORMASI TERKAIT SERTIFIKAT AKREDITASI
-                            PROGRAM STUDI DI FAKULTAS ILMU PENDIDIKAN UNIVERSITAS NEGERI PADANG
-                            <br> <br>
-                            Sertifikat Akreditasi Program Studi Yang terdapat Di Fakultas Ilmu Pendidikan Universitas Negeri Padang,
-                            Sertifikat Akreditasi Program Studi FIP UNP dapat di download dibawah ini:
+                        <p class="mt-5 description text-dark bg-white">
+                            Apabila memerlukan informasi lebih lanjut terkait sertifikat Akreditasi depertement di Fakultas Ilmu 
+                            Pendidikan dapat menghubungi email: info@fip.unp.ac.id atau langsung ke Fakultas atau Program Studi
+                            <br><br>
+                            Informasi mengenai legalisir sertifikat akreditasi (surat BAN PT Nomor 1371/BAN-PT/LL/2018 dapat diunduh di : 
+                            Penerapan Tanda Tangan Elektronik BAN-PT
+                            Dalam rangka peningkatan layanan Badan Akreditasi Nasional Perguruan Tinggi dan sebagai wujud penerapan
+                             Peraturan Pemerintah Republik lndonesia Nomor 82 Tahun 2012 tentang Penyelenggaraan Sistem dan Transaksi 
+                             Elektronik, maka mulai tanggal 26 Juni 2018:
+                            <br><br>
+                            1. BAN-PT menerbitkan Serifikat Akreditasi dalam bentuk dokumen elektronik kepada UGM melalui Sistem Akreditasi Perguruan Tinggi Online (SAPTO).
+                            <br><br>
+                            2. SK tentang Status dan Peringkat Terakreditasi serta Sertifikat Akreditasi diterbitkan dalam bentuk dokumen elektronik tersebut menggunakan tanda tangan elektronik Direktur Dewan Eksekutif BAN-PT.
+                            <br><br>
+                            3. Dengan digunakannya tanda tangan elektronik, maka Proses legalisir Sertifikat Akreditasi Program Studi yang diterbitkan setelah tanggal 26 Juni 2018 tidak
+                            diperlukan lagi.
                         </p>
                     </div>
                 </div>
