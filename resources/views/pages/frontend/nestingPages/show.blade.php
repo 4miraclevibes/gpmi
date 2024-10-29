@@ -102,7 +102,7 @@
     }
 
     .news-item-title:hover {
-        color: #007bff;
+        color: #008000;
     }
 
     .news-item-meta {
