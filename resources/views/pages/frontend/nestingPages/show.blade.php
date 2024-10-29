@@ -138,7 +138,7 @@
                                         <img src="{{ $pageContent->background_image ?? 'https://filemanager.layananberhentikuliah.com/storage/files/W3NJ8rGt1hdIv21wQwL7K896QJvnxXmyN8WzzxQd.jpg' }}" alt="{{ $pageContent->name }}" class="news-image">
                                     </a>
                                     <div class="news-content">
-                                        <a class="news-item-title" href="{{ route('nesting-pages.page-contents.show', [$nestingPage->id, $pageContent->id]) }}">{{ $pageContent->name }}</a>
+                                        <a class="news-item-title text-decoration-none" href="{{ route('nesting-pages.page-contents.show', [$nestingPage->id, $pageContent->id]) }}">{{ $pageContent->name }}</a>
                                         <p class="news-item-meta">
                                             <span class="author">{{ $pageContent->user->name }}</span> |
                                             <span class="date">{{ $pageContent->created_at->format('d F Y') }}</span>
