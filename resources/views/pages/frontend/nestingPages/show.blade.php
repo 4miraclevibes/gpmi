@@ -98,6 +98,11 @@
         font-size: 1.2rem;
         color: #333;
         margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
+    .news-item-title:hover {
+        color: #007bff;
     }
 
     .news-item-meta {
