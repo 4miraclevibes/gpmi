@@ -52,7 +52,13 @@ class LandingController extends Controller
         $parentPages = ParentPage::all();
         //Variable Local
         $nestingPage = NestingPage::find($id);
-        return view('pages.frontend.nestingPages.show', compact('nestingPage', 'pages', 'nestingPages', 'parentPages'));
+        $pageContents = PageContent::where('nesting_page_id', $id)
+                        ->where('status', 'publish')
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+        return view('pages.frontend.nestingPages.show', 
+            compact('nestingPage', 'pages', 'nestingPages', 'parentPages', 'pageContents')
+        );
     }
 
     public function nestingPageContentShow($nestingPageId, $id)

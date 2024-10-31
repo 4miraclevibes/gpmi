@@ -45,18 +45,18 @@
                   <div data-i18n="Pages">Halaman</div>
                 </a>
               </li>
-              <!-- Parent Pages -->
-              <li class="menu-item {{ Route::is('parent-pages*') ? 'active' : '' }}">
-                <a href="{{ route('parent-pages.index') }}" class="menu-link text-white">
-                  <i class="menu-icon tf-icons bx bxs-file"></i>
-                  <div data-i18n="Parent Pages">2 Menu</div>
-                </a>
-              </li>
               <!-- Nesting Pages -->
               <li class="menu-item {{ Route::is('nesting-page*') ? 'active' : '' }}">
                 <a href="{{ route('nesting-page.index') }}" class="menu-link text-white">
                   <i class="menu-icon tf-icons bx bxs-file"></i>
-                  <div data-i18n="Nesting Pages">Nesting Pages</div>
+                  <div data-i18n="Nesting Pages">Menu</div>
+                </a>
+              </li>
+              <!-- Parent Pages -->
+              <li class="menu-item {{ Route::is('parent-pages*') ? 'active' : '' }}">
+                <a href="{{ route('parent-pages.index') }}" class="menu-link text-white">
+                  <i class="menu-icon tf-icons bx bxs-file"></i>
+                  <div data-i18n="Parent Pages">Sub Menu</div>
                 </a>
               </li>
               <!-- Akreditasi -->
@@ -70,14 +70,14 @@
               <li class="menu-item {{ Route::is('content*') ? 'active' : '' }}">
                 <a href="{{ route('content.index') }}" class="menu-link text-white">
                   <i class="menu-icon tf-icons bx bxs-file"></i>
-                  <div data-i18n="Content">Content</div>
+                  <div data-i18n="Content">Halaman Utama</div>
                 </a>
               </li>
               <!-- Leader -->
               <li class="menu-item {{ Route::is('leaders*') ? 'active' : '' }}">
                 <a href="{{ route('leaders.index') }}" class="menu-link text-white">
                   <i class="menu-icon tf-icons bx bxs-file"></i>
-                  <div data-i18n="Leader">Leader</div>
+                  <div data-i18n="Leader">Pimpinan</div>
                 </a>
               </li>
             </ul>

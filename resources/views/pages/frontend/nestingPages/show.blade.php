@@ -137,10 +137,10 @@
                     <div class="news-section">
                         <div class="news-container">
                             <div class="news-grid">
-                                @foreach ($nestingPage->pageContents->where('status', 'active')->sortByDesc('created_at') as $pageContent)
+                                @foreach ($pageContents as $pageContent)
                                 <div class="news-item">
                                     <a href="{{ route('nesting-pages.page-contents.show', [$nestingPage->id, $pageContent->id]) }}">
-                                        <img src="{{ $pageContent->background_image ?? 'https://filemanager.layananberhentikuliah.com/storage/files/W3NJ8rGt1hdIv21wQwL7K896QJvnxXmyN8WzzxQd.jpg' }}" alt="{{ $pageContent->name }}" class="news-image">
+                                        <img src="{{ Storage::url($pageContent->background_image) }}" alt="{{ $pageContent->name }}" class="news-image">
                                     </a>
                                     <div class="news-content">
                                         <a class="news-item-title text-decoration-none" href="{{ route('nesting-pages.page-contents.show', [$nestingPage->id, $pageContent->id]) }}">{{ $pageContent->name }}</a>

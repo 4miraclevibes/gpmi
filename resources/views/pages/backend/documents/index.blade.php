@@ -29,7 +29,7 @@
             <th scope="row">{{ $loop->iteration }}</th>
             <td>{{ $document->user->name }}</td>
             <td>{{ $document->name }}</td>
-            <td><a href="{{ asset(Storage::url($document->file)) }}" target="_blank" class="btn btn-primary btn-sm mx-2">Download</a> <button class="btn btn-primary btn-sm" onclick="copyToClipboard('{{ asset(Storage::url($document->file)) }}')">Copy</button></td>
+            <td><a href="{{ asset(Storage::url($document->file)) }}" target="_blank" class="btn btn-primary btn-sm mx-2">Lihat</a> <button class="btn btn-primary btn-sm" onclick="copyToClipboard('{{ asset(Storage::url($document->file)) }}')">Copy</button></td>
             <td>
               <form action="{{ route('documents.destroy', $document->id) }}" method="POST" style="display:inline-block;">
                   @csrf

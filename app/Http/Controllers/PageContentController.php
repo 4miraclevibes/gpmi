@@ -66,7 +66,6 @@ class PageContentController extends Controller
 
         $data = $request->all();
         if ($request->hasFile('background_image')) {
-            Storage::delete($pageContent->background_image);
             $data['background_image'] = $request->file('background_image')->store('page-contents', 'public');
         }
         $data['slug'] = Str::slug($request->name);

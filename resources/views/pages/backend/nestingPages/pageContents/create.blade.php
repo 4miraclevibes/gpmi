@@ -21,7 +21,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="created_at" class="form-label">Tanggal Dibuat</label>
-                    <input type="date" class="form-control" id="created_at" name="created_at" value="{{ now()->format('Y-m-d') }}">
+                    <input type="datetime-local" class="form-control" id="created_at" name="created_at" value="{{ now()->format('Y-m-d H:i:s') }}">
                   </div>
                 <div class="mb-3">
                     <label for="author" class="form-label">Penulis</label>

@@ -19,7 +19,6 @@
             <th class="text-white">No</th>
             <th class="text-white">Nama</th>
             <th class="text-white">Status</th>
-            <th class="text-white">Pengguna</th>
             <th class="text-white">Aksi</th>
           </tr>
         </thead>
@@ -29,10 +28,9 @@
             <th scope="row">{{ $loop->iteration }}</th>
             <td>{{ $nestingPage->name }}</td>
             <td>{{ $nestingPage->status }}</td>
-            <td>{{ $nestingPage->user->name }}</td>
             <td>
               <a href="{{ route('nesting-page.edit', $nestingPage->id) }}" class="btn btn-warning btn-sm">Edit</a>
-              <a href="{{ route('nesting-page.page-contents.index', $nestingPage) }}" class="btn btn-info btn-sm">Konten</a>
+              <a href="{{ route('nesting-page.page-contents.index', $nestingPage) }}" class="btn btn-info btn-sm">+ {{ $nestingPage->name }}</a>
               <form action="{{ route('nesting-page.destroy', $nestingPage->id) }}" method="POST" style="display:inline-block;">
                   @csrf
                   @method('DELETE')
