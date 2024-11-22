@@ -33,7 +33,6 @@ class PageContentController extends Controller
             'created_at' => 'required|date',
         ]);
         $data = $request->all();
-        dd($data);
         if ($request->hasFile('background_image')) {
             $data['background_image'] = $request->file('background_image')->store('page-contents', 'public');
         }
