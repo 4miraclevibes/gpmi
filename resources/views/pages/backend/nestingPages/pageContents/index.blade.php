@@ -5,8 +5,8 @@
 <div class="container-xxl flex-grow-1 container-p-y">
   <div class="card">
     <div class="card-header">
-      <h5>Konten Halaman untuk {{ $nestingPage->name }}</h5>
-      <a href="{{ route('nesting-page.page-contents.create', $nestingPage) }}" class="btn btn-primary btn-sm">Buat Konten Halaman</a>
+      <h5>Buat {{ $nestingPage->name }}</h5>
+      <a href="{{ route('nesting-page.page-contents.create', $nestingPage) }}" class="btn btn-primary btn-sm">Tambah</a>
     </div>
   </div>
   <div class="card mt-2">

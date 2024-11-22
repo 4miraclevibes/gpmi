@@ -6,19 +6,18 @@
   <div class="card">
     <div class="card-header">
       <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createParentPageModal">
-        Buat Halaman Induk
+        Buat sub menu baru
       </button>
     </div>
   </div>
   <div class="card mt-2">
-    <h5 class="card-header">Tabel Halaman Induk</h5>
+    <h5 class="card-header">Table sub menu</h5>
     <div class="table-responsive text-nowrap p-3">
       <table class="table table" id="example">
         <thead>
           <tr class="text-nowrap table-dark">
             <th class="text-white">No</th>
-            <th class="text-white">Nama</th>
-            <th class="text-white">Pengguna</th>
+            <th class="text-white">Menu Utama</th>
             <th class="text-white">Aksi</th>
           </tr>
         </thead>
@@ -27,12 +26,11 @@
           <tr>
             <th scope="row">{{ $loop->iteration }}</th>
             <td>{{ $parentPage->name }}</td>
-            <td>{{ $parentPage->user->name }}</td>
             <td>
               <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editParentPageModal{{ $parentPage->id }}">
                 Edit
               </button>
-              <a href="{{ route('parent-pages.child-pages.index', $parentPage) }}" class="btn btn-info btn-sm">Anak</a>
+              <a href="{{ route('parent-pages.child-pages.index', $parentPage) }}" class="btn btn-info btn-sm">Tambah Sub Menu</a>
               <form action="{{ route('parent-pages.destroy', $parentPage->id) }}" method="POST" style="display:inline-block;">
                   @csrf
                   @method('DELETE')

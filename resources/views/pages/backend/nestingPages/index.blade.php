@@ -6,12 +6,12 @@
   <div class="card">
     <div class="card-header">
       <a href="{{ route('nesting-page.create') }}" class="btn btn-primary btn-sm">
-        Buat Halaman Nesting
+        Buat Menu Baru
       </a>
     </div>
   </div>
   <div class="card mt-2">
-    <h5 class="card-header">Tabel Halaman Nesting</h5>
+    <h5 class="card-header">Tabel Menu</h5>
     <div class="table-responsive text-nowrap p-3">
       <table class="table table" id="example">
         <thead>

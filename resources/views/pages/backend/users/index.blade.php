@@ -5,7 +5,7 @@
 <div class="container-xxl flex-grow-1 container-p-y">
   <div class="card">
     <div class="card-header">
-      <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm">Create</a>
+      <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm">Create akun</a>
     </div>
   </div>
   <div class="card mt-2">
