@@ -3,7 +3,7 @@
 @section('styles')
 <style>
     .hero-section {
-        background-image: url('https://filemanager.layananberhentikuliah.com/storage/documents/GvFxOqlo3UXSokZVimCdtQtSeqbvuzlJbNacGru6.jpg');
+        background-image: url('https://uws.fsnthrds.com/storage/images/hdi8WO5DKn7YWwHm4qdX6XwgzOD14By0A7MRGEuM.jpg');
         background-size: cover;
         background-position: center;
         height: 70vh;
@@ -111,7 +111,7 @@
 
     .duties-section {
         position: relative;
-        background-image: url('https://filemanager.layananberhentikuliah.com/storage/files/ZrMmrRX40ROforr13PP7p1Op10rzMDsMhyy4SYY1.jpg');
+        background-image: url('https://uws.fsnthrds.com/storage/images/iMleR6yFPz6QlBy673qAd9oTI7219lANZ3T5kqFr.jpg');
         background-size: cover;
         background-position: center;
         color: white;

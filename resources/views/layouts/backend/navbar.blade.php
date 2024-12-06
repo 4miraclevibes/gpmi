@@ -4,7 +4,7 @@
             <div class="app-brand demo m-0 border-bottom" style="background-color: #075308 !important">
               <a href="{{ route('landing') }}" class="app-brand-link">
                 <span class="app-brand-logo demo">
-                  <img src="https://filemanager.layananberhentikuliah.com/storage/files/WvEebn5l9SpYXZKATBrOi1rgsM1Skc6TpQFBPjVa.png" style="max-width: 150px" alt="">
+                  <img src="{{ asset('assets/landing/images/logo-white.png') }}" style="max-width: 150px" alt="">
                 </span>
               </a>
   

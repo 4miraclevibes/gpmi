@@ -7,7 +7,7 @@
         color: #fff;
     }
     .page-hero {
-        background-image: url('https://filemanager.layananberhentikuliah.com/storage/documents/GvFxOqlo3UXSokZVimCdtQtSeqbvuzlJbNacGru6.jpg');
+        background-image: url('https://uws.fsnthrds.com/storage/images/hdi8WO5DKn7YWwHm4qdX6XwgzOD14By0A7MRGEuM.jpg');
         background-size: cover;
         background-position: center;
         height: 300px;
